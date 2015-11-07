@@ -1,0 +1,66 @@
+{% extends "base_login.html" %}
+
+{% load staticfiles %}
+
+{% load widget_tweaks %}
+
+{% block titulo %}
+	Login | {{ block.super }}
+
+{% endblock titulo %}
+
+{% block row %}
+	<div id="wrapper">
+		<img src="{% static "images/Black_and_white_218x75.png" %}" alt=""> 
+		<div>{{ mensg }}</div>
+		<div id="wrappertop"></div>
+
+		<div id="wrappermiddle">
+			
+			<h2>Login</h2>
+
+			<form action="" method="post" accept-charset="utf-8" enctype="multipart/data-form">
+			{% csrf_token %}
+
+				<div id="username_input">
+
+					<div id="username_inputleft"></div>
+					<div id="username_inputmiddle">
+						<input type="text" name="username" id="url" value="Nome do Usuário" onclick="this.value = ''">
+						<img id="url_user" src="{% static "images/mailicon.png" %}" alt="">
+					</div>
+					<div id="username_inputright"></div>
+
+				</div>
+
+				<div id="password_input">
+					<div id="password_inputleft"></div>
+					<div id="password_inputmiddle">
+						<input type="password" name="password" id="url" value="Password" onclick="this.value = ''">
+						<img id="url_password" src="{% static "images/passicon.png" %}" alt="">
+					</div>
+					<div id="password_inputright"></div>
+
+				</div>
+
+				<div id="submit">
+					<input type="image" src="{% static "images/submit_hover.png" %}" id="submit1" value="Entrar">
+					<input type="image" src="{% static "images/submit.png" %}" id="submit2" value="Entrar">
+				</div>
+			</form>
+			<div id="links_left">
+				<!-- <a href="#">Forgot your Password?</a> -->
+			</div>
+
+			<!-- <div id="links_right"><a href="#">Not a Member Yet?</a></div> -->
+
+		</div>
+
+		<div id="wrapperbottom"></div>
+		
+		<div id="powered">
+		<p>Criado por <a href="">Flávio Santos</a></p>
+		</div>
+	</div>
+
+{% endblock row %}

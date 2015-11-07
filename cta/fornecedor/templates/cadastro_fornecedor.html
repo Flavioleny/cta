@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block titulo %}
+Cadastro de Fornecedor | {{ block.super }}
+{% endblock titulo %}
+
+{% block row %}
+
+<div class="col-md-8">
+	<div class="well bs-component">
+	{% if menssagem %}
+		{{ menssagem }}
+	{% endif %}
+	<form class="form-horizontal" action="" method="post" accept-charset="utf-8" enctype="multipart/data-form">
+		<fieldset>
+	    <legend>
+	    	{% if newcadastro == 'S' %}
+	    		Cadastro de Fornecedor
+			{% else %}      		
+				Editar Fornecedor
+      		{% endif %}	 
+		</legend>
+		
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="id_atividade" class="col-lg-2 control-label">Atividade</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.atividade|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_prazopagamento" class="col-lg-2 control-label">Prazo Pagamento</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.prazopagamento|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_tipopessoa" class="col-lg-2 control-label">Tipo Pessoa</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.tipopessoa|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_representante" class="col-lg-2 control-label">Representante</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.representante|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_razaosocial" class="col-lg-2 control-label">Razão Social</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.razaosocial|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_cgccpf" class="col-lg-2 control-label">Cgc/Cpf</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.cgccpf|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_endereco" class="col-lg-2 control-label">Endereço</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.endereco|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_complemento" class="col-lg-2 control-label">Complemento</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.complemento|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_cep" class="col-lg-2 control-label">Cep</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.cep|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_bairro" class="col-lg-2 control-label">Bairro</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.bairro|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_cidade" class="col-lg-2 control-label">Cidade</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.cidade|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_estado" class="col-lg-2 control-label">Estado</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.estado|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_fone1" class="col-lg-2 control-label">Fone 1</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.fone1|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_fone2" class="col-lg-2 control-label">Fone 2</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.fone2|add_class:"form-control" }}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="id_email" class="col-lg-2 control-label">Email</label>
+			<div class="col-lg-10">			
+				{{ fornecedor_form.email|add_class:"form-control" }}
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Salvar</button>
+		</fieldset>
+	</form>
+</div>
+{% endblock row %}

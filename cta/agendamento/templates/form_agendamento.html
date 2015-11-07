@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block titulo %}
+	Agendamento | {{ block.super }}
+{% endblock titulo %}
+
+{% block row %}
+
+<div class="col-md-8">
+	<div class="well bs-component">
+		{% if menssagem %}
+			{{ menssagem }}
+		{% endif %}
+		<form class="form-horizontal" action="" method="post" accept-charset="utf-8" enctype="multipart/data-form">
+		  <fieldset>
+	      	<legend>
+		    	{% if newcadastro == 'S' %}
+		    		Cadastro de Agendamento
+				{% else %}      		
+					Editar Agendamento
+	      		{% endif %}	    	
+	      	</legend>	
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="id_atendente" class="col-lg-2 control-label">Atendente</label>
+				<div class="col-lg-10">				
+					{{ agendamento_form.atendente|add_class:"form-control" }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_dataatendimento" class="col-lg-2 control-label">Data Atendimento</label>
+				<div class="col-lg-10">	
+					{{ agendamento_form.dataatendimento|add_class:"form-control dp3" }}		
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_representante" class="col-lg-2 control-label">Representante</label>
+				<div class="col-lg-10">				
+					{{ agendamento_form.representante|add_class:"form-control" }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_objetivoatendimento" class="col-lg-2 control-label">Objetivo</label>
+				<div class="col-lg-10">				
+					{{ agendamento_form.objetivoatendimento|add_class:"form-control" }}
+				</div>				
+			</div>
+			<div class="form-group">
+				<label for="id_status" class="col-lg-2 control-label">Status</label>
+				<div class="col-lg-10">				
+					{{ agendamento_form.status|add_class:"form-control" }}
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_observacao" class="col-lg-2 control-label">Observação</label>
+				<div class="col-lg-10">				
+					{{ agendamento_form.observacao|add_class:"form-control" }}
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Salvar</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+{% endblock row %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block titulo %}
+Cadastro de Representante | {{ block.super }}
+{% endblock titulo %}
+
+{% block row %}
+
+<div class="col-md-6">
+	{% if menssagem %}
+		{{ menssagem }}
+	{% endif %}
+	<div class="well bs-component">
+
+	<form class="form-horizontal" action="" method="post" accept-charset="utf-8" enctype="multipart/data-form">
+		<fieldset>
+	    <legend>
+	    	{% if newcadastro == 'S' %}
+	    		Cadastro de Representante
+			{% else %}      		
+				Editar Representante
+      		{% endif %}	    	
+	    </legend>
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="id_nomerepresentante" class="col-lg-2 control-label">Nome</label>
+			<div class="col-lg-10">
+				{{ representante_form.nomerepresentante|add_class:"form-control" }}
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Salvar</button>
+		</fieldset>
+	</form>
+	</div>
+</div>
+{% endblock row %}

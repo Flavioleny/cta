@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block titulo %}
+	Contato | {{ block.super }}
+{% endblock titulo %}
+
+{% block row %}
+
+<div class="col-md-8">
+	<div class="well bs-component">
+  		{% if mensg %}
+  			{{ mensg }}
+  		{% endif %}
+
+		<form class="form-horizontal" method="post" action="" enctype="multipart/data-form">
+	      {% csrf_token %}
+		  
+		  <fieldset>
+	      	<legend>Formulário de Contato
+	      	</legend>
+
+			<div class="form-group">
+				<label for="id_nome" class="col-lg-2 control-label">Nome:</label>
+				<div class="col-lg-10">				
+					<input class="form-control" id="realname" placeholder="Nome" type="text" required name="realname">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_email" class="col-lg-2 control-label">E-mail:</label>
+				<div class="col-lg-10">				
+					<input class="form-control" id="inputemail" placeholder="E-mail" type="text" required name="inputemail">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_assunto" class="col-lg-2 control-label">Assunto:</label>
+				<div class="col-lg-10">
+					<input class="form-control" id="subject" placeholder="Assunto" type="text" required name="subject">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="id_mensagem" class="col-lg-2 control-label">Mensagem:</label>
+				<div class="col-lg-10">
+					<textarea rows=8 cols=50 class="form-control" id="inputmessage" type="text" required name="inputmessage"> </textarea>
+				</div>
+			</div>
+			<input class="btn btn-primary" type="submit" value="Envie sua mensagem" name="submit" >
+			<input class="btn btn-primary" type="reset" value="Limpar" name="reset">
+			</form>
+			
+		</fieldset>
+	</div>
+	<i class="glyphicon glyphicon-user"></i> - Flávio Santos
+</div>
+
+{% endblock row %}

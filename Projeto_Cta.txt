@@ -1,0 +1,57 @@
+CTA - Controle de Atendimento
+
+- Manter Agendamento
+  - ID (Identificador do Agendamento);
+  - Atendente (Usuário);
+  - Data do Atendimento;
+  - Data do Agendamento;
+  - Representante;
+  - Objetivo do Atendimento;
+  - Status (Agendado, Em Atendimento e Finalizado);
+  - Observação;
+- Manter Atendimento
+  - ID (Identificador do Atendimento);
+  - Atendente (Usuário);
+  - Data do Atendimento;
+  - Hora Inicial;
+  - Hora Final;
+  - Representante;
+  - Objetivo do Atendimento;
+  - Status (Em Atendimento e Finalizado);
+  - Conteudo do Atendimento;
+  - Observação;
+- Manter Fornecedores
+  - Atividade;
+  - Prazo de Pagamento;
+  - Cobrança Bancaria;
+  - Tipo de Pessoa (Física ou Jurídica);
+  - Representante;
+  - Razão Social;
+  - CGC/CPF;
+  - Endereço;
+  - complemento;
+  - CEP;
+  - Bairro;
+  - Cidade;
+  - Estado;
+  - Fone 1; 
+  - Fone 2; 
+  - Banco;
+  - Email; 
+  - Data de Cadastro;
+- Manter Representantes
+  - Código;
+  - Nome do Representante;
+- Manter Objetivo de Visitas
+  - Código;
+  - Descrião do Objetivo;
+- Manter Usuários
+  - Código;
+  - Nome do Usuário;
+  - Login;
+  - Senha;
+  - Data Cadastro;
+  - email;
+- Manter Relatórios
+  - Agendamento;
+  - Atendimento;

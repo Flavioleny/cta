@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>{% block titulo %}CTA - Controle de Atendimento{% endblock titulo %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+	<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/rainbows.js" %}"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			{%  block row %}		
+			{% endblock row %}
+		</div>
+		
+	</div>
+
+	<script>
+		$(document).ready(function(){
+	 
+		$("#submit1").hover(
+		function() {
+		$(this).animate({"opacity": "0"}, "slow");
+		},
+		function() {
+		$(this).animate({"opacity": "1"}, "slow");
+		});
+	 	});
+	</script>
+
+</body>
+</html>
